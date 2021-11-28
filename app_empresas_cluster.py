@@ -138,7 +138,7 @@ if col2.button('Click to know more about similar companies!'):
     #Information about activity composition and company names
     
     #number of companies for each activity in the cluster
-    dict_activ = yaml.load(selected_cluster['lista_common_activities'].tolist()[0]) 
+    dict_activ = yaml.full_load(selected_cluster['lista_common_activities'].tolist()[0]) 
     #dataframe with code of activity, description and percentage of companies with that activity
     df_activities = pd.DataFrame(columns = ['cnae','cnae_desc', '%companies'])
     #sorting values with bigger numbers first
@@ -164,7 +164,7 @@ if col2.button('Click to know more about similar companies!'):
                  )
                  
     #all company names in this cluster
-    dict_names = yaml.load(selected_cluster['lista_common_names'].tolist()[0])
+    dict_names = yaml.full_load(selected_cluster['lista_common_names'].tolist()[0])
     #8 names chosen randomly
     dict_names_random = random.sample(dict_names, 8)
                  
